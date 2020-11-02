@@ -1,26 +1,49 @@
 import React, {useEffect, useState} from 'react';
+import Recipe from './Recipe';
 import './App.css';
 
 const App = () => {
   const API_ID = process.env.REACT_APP_API_ID;
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  useEffect(()=>{
-    getRecepies();
-  }, [])
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
 
-  const getRecepies = async () => {
-    const response = await fetch(`search?q=chicken&app_id=${API_ID}&app_key=${API_KEY}`);
-    const data = response.json();
-    console.log(data);
+  useEffect(()=>{
+    getRecipes();
+  }, [query])
+
+  const getRecipes = async () => {
+    const response = await fetch(`search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`);
+    const data = await response.json();
+    setRecipes(data.hits);
+  }
+
+  const updateSearch = e => {
+    setSearch(e.target.value);
+  }
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search); 
   }
 
   return(
     <div className="App">
-      <form className="search-form">
+      <form onSubmit={getSearch} className="search-form">
         <input type="text" className="search-bar"/>
-        <button className="search-button" type="submit">Search</button>
+        <button className="search-button" type="submit" value={search} onChange={updateSearch}>Search</button>
       </form>
+      {recipes.map(rp => (
+        <Recipe 
+          key={rp.recipe.label}
+          title={rp.recipe.label} 
+          calories={rp.recipe.calories}
+          image={rp.recipe.image}
+          ingredients={rp.recipe.ingredients}
+        />
+      ))}
     </div>
   );
 }
