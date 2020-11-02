@@ -35,15 +35,17 @@ const App = () => {
         <input type="text" className="search-bar"/>
         <button className="search-button" type="submit" value={search} onChange={updateSearch}>Search</button>
       </form>
-      {recipes.map(rp => (
-        <Recipe 
-          key={rp.recipe.label}
-          title={rp.recipe.label} 
-          calories={rp.recipe.calories}
-          image={rp.recipe.image}
-          ingredients={rp.recipe.ingredients}
-        />
-      ))}
+      <div className="recepies">
+        {recipes.map(rp => (
+          <Recipe 
+            key={rp.recipe.label}
+            title={rp.recipe.label} 
+            calories={rp.recipe.calories}
+            image={rp.recipe.image}
+            ingredients={rp.recipe.ingredients}
+          />
+        ))}
+      </div>
     </div>
   );
 }
