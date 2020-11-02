@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
-function App() {
-  return (
+const App = () => {
+  const API_ID = process.env.REACT_APP_API_ID;
+  const API_KEY = process.env.REACT_APP_API_KEY;
+
+  useEffect(()=>{
+    getRecepies();
+  }, [])
+
+  const getRecepies = async () => {
+    const response = await fetch(`search?q=chicken&app_id=${API_ID}&app_key=${API_KEY}`);
+    const data = response.json();
+    console.log(data);
+  }
+
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className="search-form">
+        <input type="text" className="search-bar"/>
+        <button className="search-button" type="submit">Search</button>
+      </form>
     </div>
   );
 }
