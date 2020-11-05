@@ -1,15 +1,59 @@
-# Getting Started with Create React App
+# Delicious Recipes - Recipe App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is about building a recipe web-page with React.
+It was created with [Create-React-App](https://github.com/facebook/create-react-app)
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+![screenshot](img.png)
 
-### `yarn start`
+## Live version
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Soon...
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Get started
+
+```bash
+   git clone git@github.com:Mesi21/Recipe_app.git
+   cd into the folder by typing: cd recipe_app
+   Run npm install
+   Run npm start
+```
+
+ :heavy_plus_sign: add your contribution if you'd like
+ And please feel free to make a PR
+
+## Technology
+
+- React
+- Create-React-App
+- npm
+- Nodejs
+- HTML && CSS
+
+## Contributor:
+
+Molnar Emese:
+
+  - [Github](https://github.com/Mesi21)  
+  - [Email:](mailto:mse212002@gmail.com) - mse212002@gmail.com
+  - [Portfolio]()
+  - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/).  
+  - [Twitter](https://twitter.com/buksimesi21) 
+  - [Angel List]()
+    
+## Features
+- Ability to search for new recipes
+- All details about the recipes are showing up on the page
+  together with a picture of it
+
+## Future Features
+- Responsive design for phone and tablet sizes
+
+## License
+
+This project is [MIT](https://tldrlegal.com/license/mit-license) licensed.
+
+## Show your support:
+
+Give a :star: if you liked the app
