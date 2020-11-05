@@ -21,7 +21,7 @@ Soon...
 ```
 
  :heavy_plus_sign: add your contribution if you'd like
- And please feel free to make a PR
+ and please feel free to make a PR
 
 ## Technology
 
